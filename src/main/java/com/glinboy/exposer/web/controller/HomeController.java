@@ -1,22 +1,19 @@
 package com.glinboy.exposer.web.controller;
 
-import java.util.Map;
+import java.io.IOException;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 @RequestMapping("/")
 public class HomeController {
 
-	@Value("${spring.application.name}")
-	private String applicationName;
-
 	@GetMapping
-	public ResponseEntity<Map<String, String>> getHome() {
-		return ResponseEntity.ok(Map.of("status", "OK", "application", applicationName));
+	public void getHome(HttpServletResponse response) throws IOException {
+		response.sendRedirect("/swagger-ui.html");
 	}
 }
