@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = {"/api/v1/environment", "/api/v1/env"})
 public class EnvironmentResource {
 
-	@GetMapping("/variable")
+	@GetMapping("/variables")
 	public ResponseEntity<Map<String, String>> getEnvironmentVariables() {
 		return ResponseEntity.ok(System.getenv());
 	}
