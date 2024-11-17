@@ -1,3 +1,15 @@
 spring:
   application:
     name: exposer
+
+springdoc:
+  swagger-ui:
+    docExpansion: none
+
+application:
+  info:
+    description: Expose applivation env and system variables
+    version: 0.0.1-SNAPSHOT
+    license: MIT license
+    license-url: https://github.com/GLinBoy/system_info_exposer/blob/main/LICENSE.md
+    github-url: https://github.com/GLinBoy/system_info_exposer
