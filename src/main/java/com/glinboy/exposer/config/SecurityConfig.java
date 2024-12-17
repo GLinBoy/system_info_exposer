@@ -11,12 +11,20 @@ import org.springframework.security.config.annotation.web.configurers.AbstractHt
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import com.glinboy.exposer.security.TokenFilter;
+
+import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 @EnableMethodSecurity(securedEnabled = true, jsr250Enabled = true, prePostEnabled = true)
 public class SecurityConfig {
+	
+	private final TokenFilter tokenFilter;
 
 	private static final String[] AUTH_WHITELIST = {
 			"/",
@@ -40,6 +48,7 @@ public class SecurityConfig {
 						.permitAll()
 						.anyRequest().authenticated())
 				.sessionManagement(management -> management.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+				.addFilterBefore(tokenFilter, UsernamePasswordAuthenticationFilter.class)
 				.build();
 	}
 }
