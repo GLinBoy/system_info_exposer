@@ -1,4 +1,4 @@
-package com.glinboy.exposer.security;
+package com.glinboy.exposer.config;
 
 import java.util.stream.Stream;
 
