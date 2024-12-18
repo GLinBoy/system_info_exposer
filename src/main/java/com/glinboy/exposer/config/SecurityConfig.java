@@ -28,6 +28,7 @@ public class SecurityConfig {
 
 	private static final String[] AUTH_WHITELIST = {
 			"/",
+			"/actuator/health/**",
 			// -- Swagger UI v3 (OpenAPI)
 			"/swagger-ui.html",
 			"/v3/api-docs/**",
