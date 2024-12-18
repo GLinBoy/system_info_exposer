@@ -1,6 +1,13 @@
 spring:
   application:
     name: exposer
+  main:
+    banner-mode: OFF
+
+logging:
+  level:
+    root: OFF
+    com.glinboy.exposer: INFO
 
 springdoc:
   swagger-ui:
