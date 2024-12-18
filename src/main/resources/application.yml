@@ -4,6 +4,17 @@ spring:
   main:
     banner-mode: OFF
 
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+        - health
+
 logging:
   level:
     root: OFF
