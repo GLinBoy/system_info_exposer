@@ -35,6 +35,29 @@ You can run a Spring Boot application using Maven in two ways: with Maven instal
 
 By using either of these commands, you can easily run your Spring Boot application for development or testing.
 
+## How to get the token?
+
+**Using the Token in the Application**
+
+1. **Finding the Generated Token in the Logs**  
+   When the application starts, it generates a token and logs it for your reference. To find the token:  
+   - Look for a log entry similar to the following:  
+     ```
+     2024-12-19T13:10:35.718+01:00 INFO 7399 --- [exposer] [restartedMain] c.glinboy.exposer.security.TokenFilter : A token generated: f2e39634-0ee6-4b68-b904-0e39c0d448cb
+     ```  
+   - The token is the value displayed after "A token generated:" (e.g., `f2e39634-0ee6-4b68-b904-0e39c0d448cb`).
+
+2. **Setting the Token Using an Environment Variable**  
+   If you prefer to specify a custom token, you can set it using the environment variable:  
+   - `application.api.token-value`  
+   Example:  
+   ```bash
+   export application.api.token-value=your-custom-token
+   ```  
+   Replace `your-custom-token` with your desired token value.
+
+By following these steps, you can either retrieve the token from the logs or set it manually as needed.
+
 ## cURL requests
 
 - Get environment variables
