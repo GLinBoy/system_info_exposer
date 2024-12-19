@@ -58,44 +58,56 @@ By using either of these commands, you can easily run your Spring Boot applicati
 
 By following these steps, you can either retrieve the token from the logs or set it manually as needed.
 
-## cURL requests
+## Access API
 
-- Get environment variables
+**Accessing the API Documentation and Making Requests**
 
+1. **OpenAPI/Swagger UI**  
+   The application provides an OpenAPI/Swagger UI for exploring and testing the available APIs.  
+   - You can access it in your browser at:  
+     **[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)**  
+   - The Swagger UI offers a user-friendly interface to view the API documentation, inspect available endpoints, and test them directly from the browser.
 
-  ```bash
-    curl -X 'GET' \
-  	'http://localhost:8080/api/v1/environment/variables' \
-  	-H 'accept: */*' \
-  	-H 'X-API-KEY: YOUR_API_KEY'
-  ```
+2. **Using cURL for API Requests**  
+   You can also interact with the API using cURL commands. For example:  
+   - Get environment variables
 
-  or
+     ```bash
+       curl -X 'GET' \
+  	   'http://localhost:8080/api/v1/environment/variables' \
+  	   -H 'accept: */*' \
+  	   -H 'X-API-KEY: YOUR_API_KEY'
+     ```
 
+     or
 
-  ```bash
-    curl -X 'GET' \
-  	'http://localhost:8080/api/v1/env/variables' \
-  	-H 'accept: */*' \
-  	-H 'X-API-KEY: YOUR_API_KEY'
-  ```
+     ```bash
+       curl -X 'GET' \
+  	   'http://localhost:8080/api/v1/env/variables' \
+     	-H 'accept: */*' \
+     	-H 'X-API-KEY: YOUR_API_KEY'
+     ```
 
-- Get system properties
+   - Get system properties
 
+     ```bash
+       curl -X 'GET' \
+  	   'http://localhost:8080/api/v1/system/properties' \
+  	   -H 'accept: */*' \
+  	   -H 'X-API-KEY: YOUR_API_KEY'
+     ```
 
-  ```bash
-    curl -X 'GET' \
-  	'http://localhost:8080/api/v1/system/properties' \
-  	-H 'accept: */*' \
-  	-H 'X-API-KEY: YOUR_API_KEY'
-  ```
+     or
 
-  or
+     ```bash
+       curl -X 'GET' \
+  	   'http://localhost:8080/api/v1/sys/properties' \
+  	   -H 'accept: */*' \
+  	   -H 'X-API-KEY: YOUR_API_KEY'
+     ```
 
+### Notes:
+- Ensure the application is running before accessing the Swagger UI or making cURL requests.
+- Adjust the host and port if the application is configured to run on a different address or port.
 
-  ```bash
-    curl -X 'GET' \
-  	'http://localhost:8080/api/v1/sys/properties' \
-  	-H 'accept: */*' \
-  	-H 'X-API-KEY: YOUR_API_KEY'
-  ```
+With the Swagger UI and cURL, you can efficiently explore and interact with the application's APIs.
