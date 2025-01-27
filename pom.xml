@@ -6,12 +6,12 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.4.1</version>
+		<version>3.4.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.glinboy</groupId>
 	<artifactId>exposer</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>exposer</name>
 	<description>A project to get information about environemt that it is running </description>
 	<url />
